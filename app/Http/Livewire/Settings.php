@@ -11,13 +11,17 @@ class Settings extends Component
 
     public $settingField = "";
     public $settingValue = "";
-    
-   
-    public function setField($field){
+
+    public function setField($field)
+    {
+        //Purging on any settings update
+
+        // LSCache::purgeAll();
         $this->settingField = $field;
     }
 
-    public function mount(){
+    public function mount()
+    {
         $this->siteInfo = SiteSettings::first();
     }
 

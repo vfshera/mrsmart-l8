@@ -3,57 +3,47 @@
 namespace App\Http\Controllers;
 
 use App\Models\SiteSettings;
-use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
-    public function index(){
+    public function index()
+    {
 
         $services = json_decode(json_encode([
             [
                 "name" => "Dry Cleaning",
-                "icon" => "clean.svg"
+                "icon" => "clean.svg",
             ],
             [
                 "name" => "Carpet Cleaning",
-                "icon" => "carpet.svg"
+                "icon" => "carpet.svg",
             ],
             [
                 "name" => "House Cleaning",
-                "icon" => "house.svg"
+                "icon" => "house.svg",
             ],
             [
                 "name" => "Car Interior Cleaning",
-                "icon" => "car.svg"
+                "icon" => "car.svg",
             ],
             [
                 "name" => "Upholstery Cleaning",
-                "icon" => "sofa_with_buttons.svg"
-            ]
-            ]));
+                "icon" => "sofa_with_buttons.svg",
+            ],
+        ]));
 
+        $siteInfo = SiteSettings::first();
 
-            $siteInfo = SiteSettings::first();
-
-    
-        return view('welcome', compact('services','siteInfo'));
+        return view('welcome', compact('services', 'siteInfo'));
     }
 
-
-
-
-    public function dashboard(){
+    public function dashboard()
+    {
         return view('dashboard');
     }
 
-
-    public function settings(){
-        $siteInfo = SiteSettings::first();
-
-        return view('livewire.settings' ,  compact('siteInfo'));
-    }
-
-    public function notFound(){
+    public function notFound()
+    {
         return view('notfound');
     }
 }

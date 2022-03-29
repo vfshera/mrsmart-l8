@@ -1,33 +1,29 @@
 <?php
 
-use App\Http\Controllers\{PagesController, ContactMessageController};
-use App\Http\Livewire\{Messages,Settings};
-use App\Mail\ContactReceivedMail;
-use App\Mail\ContactSentMail;
-use Illuminate\Support\Facades\Mail;
+use App\Http\Controllers\ContactMessageController;
+use App\Http\Controllers\PagesController;
+use App\Http\Livewire\Messages;
+use App\Http\Livewire\Settings;
 use Illuminate\Support\Facades\Route;
 
-Route::middleware(['HtmlMinifier'])->group(function(){
-    
-    Route::get('/', [PagesController::class,'index'])->name('welcome');
-    Route::post('contact', [ContactMessageController::class,'store'])->name('contact');
-    
+Route::middleware(['HtmlMinifier', 'lscache:max-age=604800;public'])->group(function () {
+
+    Route::get('/', [PagesController::class, 'index'])->name('welcome');
+    Route::post('contact', [ContactMessageController::class, 'store'])->name('contact');
+
 });
 
+Route::middleware(['auth:sanctum', 'verified', 'lscache:no-cache'])->prefix('dashboard')->group(function () {
 
+    Route::get('/', [PagesController::class, 'dashboard'])->name('dashboard');
 
-Route::middleware(['auth:sanctum', 'verified'])->prefix('dashboard')->group(function(){
-    
-    Route::get('/', [PagesController::class,'dashboard'])->name('dashboard');
-
-    Route::get('site-settings',Settings::class)->name('site-settings');
+    Route::get('site-settings', Settings::class)->name('site-settings');
     Route::get('messages', Messages::class)->name('messages');
 
 });
-
 
 /**
  * Last Route To Handle 404
  */
 
- Route::any('{any}', [PagesController::class, 'notFound']);
+Route::any('{any}', [PagesController::class, 'notFound']);
