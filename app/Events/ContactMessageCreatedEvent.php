@@ -11,14 +11,10 @@ class ContactMessageCreatedEvent
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    /**
-     * Create a new event instance.
-     *
-     * @return void
-     */
-    public function __construct(public ContactMessage $contactMessage)
+    public $contactMessage;
+    public function __construct(ContactMessage $contactMessage)
     {
-        //
+        $this->contactMessage = $contactMessage;
     }
 
 }

@@ -133,9 +133,8 @@
             <div class="contact-info">
                 <div class="info-header">
                     <h1>Contact Us</h1>
-                    <p>Reach us
-                        <img src="storage/icons/hand_right.svg" alt="Reach Us Icon">
-                    </p>
+                    <img src="storage/icons/hand_right.svg" alt="Reach Us Icon">
+
 
                 </div>
 
@@ -145,10 +144,10 @@
                 </div>
             </div>
             <form action="{{ route('contact') }}" method="POST">
-                @csrf()
                 <x-form.input-field label="Name" />
                 <x-form.input-field label="Email" inputType="email" />
                 <x-form.text-area label="Message" />
+                @csrf()
 
                 <button>send</button>
             </form>

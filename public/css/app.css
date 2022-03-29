@@ -1744,13 +1744,20 @@ body {
 .input-group input{
   border-width: 0px;
   border-bottom-width: 1px;
+}
+.input-group textarea{
+  border-width: 1px;
+}
+.input-group input, .input-group textarea{
   --tw-border-opacity: 1;
   border-color: rgb(15 72 91 / var(--tw-border-opacity));
   --tw-text-opacity: 1;
   color: rgb(66 66 66 / var(--tw-text-opacity));
 }
-.input-group input:focus{
+.input-group input:focus, .input-group textarea:focus{
   border-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgb(15 72 91 / var(--tw-border-opacity));
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
@@ -1759,10 +1766,6 @@ body {
   line-height: 1rem;
   --tw-text-opacity: 1;
   color: rgb(239 68 68 / var(--tw-text-opacity));
-}
-.input-group textarea{
-  --tw-text-opacity: 1;
-  color: rgb(66 66 66 / var(--tw-text-opacity));
 }
 .input-group:not(:first-child){
   margin-top: 1.25rem;
@@ -2509,8 +2512,8 @@ main.mrsmart-parent{
   row-gap: 2.5rem;
   --tw-bg-opacity: 1;
   background-color: rgb(15 72 91 / var(--tw-bg-opacity));
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
 }
 @media (min-width: 768px){
   .footer{
@@ -2590,7 +2593,13 @@ main.mrsmart-parent{
 .footer .quick-links, .footer .contact{
   display: flex;
   flex-direction: column;
+  align-items: center;
   row-gap: 0.5rem;
+}
+@media (min-width: 640px){
+  .footer .quick-links, .footer .contact{
+    align-items: flex-start;
+  }
 }
 .footer .quick-links p, .footer .contact p{
   margin-bottom: 0.5rem;
@@ -2621,10 +2630,15 @@ main.mrsmart-parent{
 .footer .quick-links a.quick-link, .footer .contact a.quick-link{
   font-weight: 600;
 }
-.footer .quick-links a.quick-link::before,
-.footer .contact a.quick-link::before {
-  content: "•";
-  margin-right: 0.5rem;
+@media (min-width: 640px){
+  .footer .quick-links a.quick-link::before, .footer .contact a.quick-link::before{
+    content: var(--tw-content);
+    margin-right: 0.5rem;
+  }
+  .footer .quick-links a.quick-link::before, .footer .contact a.quick-link::before{
+    --tw-content: "•";
+    content: var(--tw-content);
+  }
 }
 .footer .quick-links a.contact-link, .footer .contact a.contact-link{
   display: flex;
@@ -2658,7 +2672,7 @@ section.hero{
 }
 @media (min-width: 640px){
   section.hero{
-    height: 65vh;
+    height: 60vh;
   }
 }
 @media (min-width: 1024px){
@@ -2694,11 +2708,11 @@ section.hero .hero-content{
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(17 17 17 / 0));
   --tw-gradient-stops: var(--tw-gradient-from), transparent, var(--tw-gradient-to, rgb(0 0 0 / 0));
   --tw-gradient-to: transparent;
-  padding-bottom: 9rem;
+  padding-bottom: 10rem;
 }
 @media (min-width: 768px){
   section.hero .hero-content{
-    padding-bottom: 4rem;
+    padding-bottom: 6rem;
   }
 }
 @media (min-width: 1024px){
@@ -2816,12 +2830,12 @@ section.info-container{
 }
 section.info-container .info{
   position: absolute;
-  top: -7rem;
+  top: -8rem;
   display: flex;
   width: 91.666667%;
   flex-direction: column;
   justify-content: space-between;
-  gap: 1.25rem;
+  gap: 2rem;
   border-radius: 1rem;
   --tw-bg-opacity: 1;
   background-color: rgb(15 72 91 / var(--tw-bg-opacity));
@@ -2954,6 +2968,8 @@ section.services{
   section.services{
     gap: 0px;
   }
+}
+@media (min-width: 1024px){
   section.services{
     padding-top: 6rem;
     padding-bottom: 6rem;
@@ -2976,19 +2992,31 @@ section.services .service-description{
   }
 }
 section.services .service-description h1{
-  font-size: 2.25rem;
-  line-height: 2.5rem;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
   font-weight: 700;
   --tw-text-opacity: 1;
   color: rgb(15 72 91 / var(--tw-text-opacity));
 }
+@media (min-width: 1024px){
+  section.services .service-description h1{
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+}
 section.services .service-description p{
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
   --tw-text-opacity: 1;
   color: rgb(66 66 66 / var(--tw-text-opacity));
+}
+@media (min-width: 1024px){
+  section.services .service-description p{
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
 }
 section.services .service-description .image-container{
   margin-top: 0.75rem;
@@ -3113,13 +3141,13 @@ section.contact .contact-info{
 section.contact .contact-info .info-header{
   display: flex;
   height: 33.333333%;
-  flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 0.5rem;
   --tw-bg-opacity: 1;
   background-color: rgb(15 72 91 / var(--tw-bg-opacity));
-  padding-top: 3.5rem;
-  padding-bottom: 3.5rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
   padding-left: 1.25rem;
 }
 @media (min-width: 768px){
@@ -3129,15 +3157,6 @@ section.contact .contact-info .info-header{
   }
 }
 @media (min-width: 1024px){
-  section.contact .contact-info .info-header{
-    flex-direction: column;
-  }
-  section.contact .contact-info .info-header{
-    align-items: flex-start;
-  }
-  section.contact .contact-info .info-header{
-    justify-content: flex-start;
-  }
   section.contact .contact-info .info-header{
     padding-top: 5rem;
     padding-bottom: 5rem;
@@ -3159,23 +3178,18 @@ section.contact .contact-info .info-header h1{
     line-height: 2.5rem;
   }
 }
-section.contact .contact-info .info-header p{
-  margin-top: 0.5rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-section.contact .contact-info .info-header p img{
-  height: 2.5rem;
+section.contact .contact-info .info-header img{
+  height: 1.5rem;
   --tw-rotate: 90deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
+@media (min-width: 768px){
+  section.contact .contact-info .info-header img{
+    height: 2.5rem;
+  }
+}
 @media (min-width: 1024px){
-  section.contact .contact-info .info-header p img{
+  section.contact .contact-info .info-header img{
     --tw-rotate: 0deg;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
@@ -3193,8 +3207,8 @@ section.contact form{
   width: 100%;
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
   padding-top: 3.5rem;
   padding-bottom: 3.5rem;
 }
@@ -3218,8 +3232,8 @@ section.contact form button{
   background-color: rgb(15 72 91 / var(--tw-bg-opacity));
   padding-left: 2rem;
   padding-right: 2rem;
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   font-weight: 600;
   text-transform: uppercase;
   --tw-text-opacity: 1;

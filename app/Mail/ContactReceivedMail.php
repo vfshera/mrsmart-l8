@@ -11,14 +11,15 @@ class ContactReceivedMail extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
 
-    /**
-     * Create a new message instance.
-     *
-     * @return void
-     */
-    public function __construct(public $sender,public $email, public $msg)
+    public $sender;
+    public $email;
+    public $msg;
+
+    public function __construct($sender, $email, $msg)
     {
-        //
+        $this->msg = $msg;
+        $this->email = $email;
+        $this->sender = $sender;
     }
 
     /**

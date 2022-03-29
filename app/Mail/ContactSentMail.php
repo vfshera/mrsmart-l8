@@ -11,14 +11,11 @@ class ContactSentMail extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
 
-    /**
-     * Create a new message instance.
-     *
-     * @return void
-     */
-    public function __construct(public $name)
+    public $name;
+
+    public function __construct($name)
     {
-        //
+        $this->name = $name;
     }
 
     /**
@@ -29,7 +26,6 @@ class ContactSentMail extends Mailable implements ShouldQueue
     public function build()
     {
 
-        
         return $this->subject("Message Delivered!")->view('emails.contact.sent');
     }
 }
