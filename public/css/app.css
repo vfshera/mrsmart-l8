@@ -1249,13 +1249,13 @@ select{
   --tw-border-opacity: 1;
   border-color: rgb(243 244 246 / var(--tw-border-opacity));
 }
-.border-accent{
-  --tw-border-opacity: 1;
-  border-color: rgb(0 149 135 / var(--tw-border-opacity));
-}
 .border-gray-400{
   --tw-border-opacity: 1;
   border-color: rgb(156 163 175 / var(--tw-border-opacity));
+}
+.border-accent{
+  --tw-border-opacity: 1;
+  border-color: rgb(0 149 135 / var(--tw-border-opacity));
 }
 .bg-white{
   --tw-bg-opacity: 1;
@@ -1552,10 +1552,6 @@ select{
   --tw-text-opacity: 1;
   color: rgb(34 197 94 / var(--tw-text-opacity));
 }
-.text-ms-dark{
-  --tw-text-opacity: 1;
-  color: rgb(66 66 66 / var(--tw-text-opacity));
-}
 .text-primary{
   --tw-text-opacity: 1;
   color: rgb(15 72 91 / var(--tw-text-opacity));
@@ -1567,6 +1563,10 @@ select{
 .text-gray-300{
   --tw-text-opacity: 1;
   color: rgb(209 213 219 / var(--tw-text-opacity));
+}
+.text-ms-dark{
+  --tw-text-opacity: 1;
+  color: rgb(66 66 66 / var(--tw-text-opacity));
 }
 .underline{
   -webkit-text-decoration-line: underline;
@@ -2571,6 +2571,19 @@ main.mrsmart-parent{
 }
 @media (min-width: 768px){
   .footer .brand-slogan{
+    text-align: left;
+  }
+}
+.footer .brand .copyright{
+  margin-top: 0.5rem;
+  text-align: center;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+@media (min-width: 640px){
+  .footer .brand .copyright{
     text-align: left;
   }
 }

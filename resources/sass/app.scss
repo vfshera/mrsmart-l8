@@ -429,6 +429,10 @@ main.mrsmart-parent {
         &-slogan {
             @apply italic text-center md:text-left text-white text-[10px] mt-2;
         }
+
+        .copyright {
+            @apply mt-2 text-sm text-white text-center sm:text-left;
+        }
     }
 
     .quick-links,

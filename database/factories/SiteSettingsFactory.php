@@ -22,7 +22,7 @@ class SiteSettingsFactory extends Factory
             'operation_day_to' => 'Sat',
             'operation_time_from' => '8am',
             'operation_time_to' => '6pm',
-            'location' => 'Mpeketoni,Lamu',
+            'location' => 'Mpeketoni, Lamu',
             'email' => 'info@mrsmartcs.com',
             'phone' => '+254113350588'
         ];

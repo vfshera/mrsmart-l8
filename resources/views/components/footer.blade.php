@@ -13,6 +13,7 @@
             and working environment.
         </p>
 
+        <p class="copyright">&copy;{{ date('Y', time()) }}</p>
     </div>
 
     <div class="quick-links">
