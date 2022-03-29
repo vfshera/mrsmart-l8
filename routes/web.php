@@ -2,12 +2,16 @@
 
 use App\Http\Controllers\{PagesController, ContactMessageController};
 use App\Http\Livewire\{Messages,Settings};
+use App\Mail\ContactReceivedMail;
+use App\Mail\ContactSentMail;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware(['HtmlMinifier'])->group(function(){
     
     Route::get('/', [PagesController::class,'index'])->name('welcome');
     Route::post('contact', [ContactMessageController::class,'store'])->name('contact');
+    
 });
 
 
