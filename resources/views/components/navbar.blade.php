@@ -14,13 +14,13 @@
         <ul>
             @guest
                 <li class="nav-link" @click=" showMobileNav = ! showMobileNav">
-                    <a href="/">Home</a>
+                    <a href="{{ request()->routeIs('welcome') ? '/#hero' : '/' }}">Home</a>
                 </li>
                 <li class="nav-link" @click=" showMobileNav = ! showMobileNav">
-                    <a href="/">Services</a>
+                    <a href="/#services">Services</a>
                 </li>
-                <li class="nav-link" @click=" showMobileNav = ! showMobileNav">
-                    <a href="/">Contact</a>
+                <li class="nav-link " @click=" showMobileNav = ! showMobileNav">
+                    <a href="/#contact">Contact</a>
                 </li>
             @endguest
 
