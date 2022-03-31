@@ -563,7 +563,7 @@ section.services {
 
         .service {
             @apply flex items-center gap-2 lg:gap-3 p-2 lg:p-5 bg-white rounded shadow-md cursor-pointer hover:shadow-accent/30;
-            img {
+            svg {
                 @apply h-10 lg:h-14;
             }
 
@@ -574,7 +574,7 @@ section.services {
                 span {
                     @apply hidden  text-accent sm:flex items-center gap-1 text-xs lg:text-base;
 
-                    img {
+                    svg {
                         @apply h-5;
                     }
                 }
@@ -598,7 +598,7 @@ section.contact {
                 @apply text-white text-2xl lg:text-4xl font-bold;
             }
 
-            img {
+            svg {
                 @apply h-6 md:h-10 rotate-90 lg:rotate-0;
             }
         }
