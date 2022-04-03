@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\ContactMessageController;
 use App\Http\Controllers\PagesController;
 use App\Http\Livewire\Messages;
 use App\Http\Livewire\Settings;
@@ -9,13 +8,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware(['HtmlMinifier', 'lscache:max-age=604800;public'])->group(function () {
 
     Route::get('/', [PagesController::class, 'index'])->name('welcome');
-    Route::post('contact', [ContactMessageController::class, 'store'])->name('contact');
 
 });
 
 Route::middleware(['auth:sanctum', 'verified', 'lscache:no-cache'])->prefix('dashboard')->group(function () {
-
-    
 
     Route::get('/', [PagesController::class, 'dashboard'])->name('dashboard');
 

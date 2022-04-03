@@ -3260,7 +3260,15 @@ section.contact .contact-info .info-photo{
     height: 66.666667%;
   }
 }
-section.contact form{
+section.contact .contact-form{
+  width: 100%;
+}
+@media (min-width: 1024px){
+  section.contact .contact-form{
+    width: 50%;
+  }
+}
+section.contact .contact-form form{
   width: 100%;
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -3270,19 +3278,16 @@ section.contact form{
   padding-bottom: 3.5rem;
 }
 @media (min-width: 640px){
-  section.contact form{
+  section.contact .contact-form form{
     padding: 5rem;
   }
 }
 @media (min-width: 1024px){
-  section.contact form{
-    width: 50%;
-  }
-  section.contact form{
+  section.contact .contact-form form{
     padding-right: 8rem;
   }
 }
-section.contact form button{
+section.contact .contact-form form button{
   margin-top: 1.25rem;
   width: 100%;
   --tw-bg-opacity: 1;
@@ -3296,7 +3301,7 @@ section.contact form button{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
-section.contact form button:hover{
+section.contact .contact-form form button:hover{
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
@@ -3304,7 +3309,7 @@ section.contact form button:hover{
   --tw-shadow: var(--tw-shadow-colored);
 }
 @media (min-width: 1024px){
-  section.contact form button{
+  section.contact .contact-form form button{
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
   }

@@ -6,14 +6,18 @@ use Illuminate\View\Component;
 
 class TextArea extends Component
 {
+    public $label = "";
+    public $model = "";
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct(public $label)
+    public function __construct($label, $model = "")
     {
-        //
+        $this->label = $label;
+        $this->model = $model;
+
     }
 
     /**

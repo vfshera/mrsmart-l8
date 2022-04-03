@@ -608,11 +608,15 @@ section.contact {
         }
     }
 
-    form {
-        @apply w-full lg:w-1/2 px-5 py-14 sm:p-20 bg-white lg:pr-32;
+    .contact-form {
+        @apply w-full lg:w-1/2;
 
-        button {
-            @apply mt-5 w-full px-8 py-4 lg:py-3 font-semibold uppercase bg-primary hover:shadow-accent/50 hover:shadow-md text-white;
+        form {
+            @apply w-full  px-5 py-14 sm:p-20 bg-white lg:pr-32;
+
+            button {
+                @apply mt-5 w-full px-8 py-4 lg:py-3 font-semibold uppercase bg-primary hover:shadow-accent/50 hover:shadow-md text-white;
+            }
         }
     }
 }
