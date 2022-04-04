@@ -1,4 +1,4 @@
-<div class="mrsmart-container pt-20">
+<div class="mrsmart-container ">
     <div class=" site-settings-page">
 
         {{-- @if ($showModal) --}}

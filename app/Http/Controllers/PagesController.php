@@ -56,6 +56,11 @@ class PagesController extends Controller
         return view('settings');
     }
 
+    public function messages()
+    {
+        return view('messages');
+    }
+
     public function notFound()
     {
         return view('notfound');

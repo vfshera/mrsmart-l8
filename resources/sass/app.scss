@@ -275,7 +275,7 @@ main.mrsmart-parent {
         }
 
         .content {
-            @apply p-1 rounded mt-2 shadow border-2 text-ms-dark border-accent;
+            @apply p-3 line-clamp-none w-[80ch] rounded-sm mt-2 shadow border-2 text-ms-dark  border-accent/50;
         }
     }
 }

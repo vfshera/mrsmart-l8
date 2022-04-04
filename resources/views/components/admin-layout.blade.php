@@ -36,7 +36,7 @@
         <x-notification />
     </div>
 
-    <main class="mrsmart-parent pt-12">
+    <main class="mrsmart-parent pt-24">
         {{ $slot }}
     </main>
 

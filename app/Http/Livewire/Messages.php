@@ -2,28 +2,30 @@
 
 namespace App\Http\Livewire;
 
-use Livewire\Component;
-use App\Http\Livewire\Modal;
 use App\Models\ContactMessage;
+use Livewire\Component;
 
 class Messages extends Component
 {
 
     public $messages;
-    public $msg = "Sender Message";
-    public $name = "Sender Name";
+    public $msg = "";
+    public $name = "";
+    public $showMessage = false;
 
     public function mount()
     {
         $this->messages = ContactMessage::all();
     }
 
-    public function setMessage($name , $message)
+    public function setMessage($message)
     {
-        
-        $this->msg = $message;
-        $this->name = $name;
-       
+
+        $this->msg = $message['message'];
+        $this->name = $message['name'];
+
+        $this->showMessage = $this->msg != "";
+
     }
     public function render()
     {
