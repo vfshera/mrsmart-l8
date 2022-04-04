@@ -138,7 +138,8 @@ main.mrsmart-parent {
                 }
             }
 
-            &-danger {
+            &-danger,
+            &-error {
                 @apply border-red-600 border-b-4;
 
                 .message-icon {
