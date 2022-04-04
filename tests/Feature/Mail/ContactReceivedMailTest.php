@@ -2,21 +2,43 @@
 
 namespace Tests\Feature\Mail;
 
+use App\Http\Livewire\ContactForm;
+use App\Mail\ContactReceivedMail;
+use App\Models\ContactMessage;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Support\Facades\Mail;
+use Livewire\Livewire;
 use Tests\TestCase;
 
 class ContactReceivedMailTest extends TestCase
 {
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
-    public function test_example()
+    use RefreshDatabase;
+    /** @test **/
+    public function contact_mail_received_content()
     {
-        $response = $this->get('/');
+        $contact = ContactMessage::factory()->create();
 
-        $response->assertStatus(200);
+        $this->assertDatabaseCount('contact_messages', 1);
+
+        $mailable = new ContactReceivedMail($contact->name, $contact->email, $contact->message);
+
+        $mailable->assertSeeInHtml($contact->name);
+        $mailable->assertSeeInHtml("received");
+    }
+
+    /** @test **/
+    public function contact_mail_received_queued()
+    {
+        Mail::fake();
+
+        Livewire::test(ContactForm::class)
+            ->set('name', 'Sender Name')
+            ->set('email', 'sender@examplmail.com')
+            ->set('message', 'Something useful')
+            ->call('submit')
+            ->assertRedirect('/');
+
+        Mail::assertQueued(ContactReceivedMail::class);
+
     }
 }
