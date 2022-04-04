@@ -9,9 +9,11 @@ class SiteSettings extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
 
-    public function operationHours(){
+    public function operationHours()
+    {
 
-        return ($this->operation_day_from ?? "Mon") . " - ".  ($this->operation_day_to ?? "Sat") .  " : " .  ($this->operation_time_from ?? "8am"). " - " . ($this->operation_time_to ?? "6pm");
+        return ($this->operation_day_from ?? "Mon") . " - " . ($this->operation_day_to ?? "Sat") . " : " . ($this->operation_time_from ?? "8am") . " - " . ($this->operation_time_to ?? "6pm");
     }
 }
