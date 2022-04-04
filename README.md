@@ -2,6 +2,9 @@
 
  <div align="center">
  <h1>Mr Smart Cleaning Services</h1>
- MrSmart is a cleaning company based in Kenya.
+
+[![Actions Status](https://github.com/franlinshera/mrsmart-l8/workflows/Tests/badge.svg)](https://github.com/franklinshera/mrsmart-l8/actions)
+
+MrSmart is a cleaning company based in Kenya.
 
  </div>
