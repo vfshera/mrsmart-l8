@@ -25,6 +25,8 @@
         </div>
         {{-- @endif --}}
 
+
+
         <h1>Site Settings </h1>
 
         <hr>
@@ -42,7 +44,7 @@
                             x-transition:leave="transition ease-in duration-300"
                             x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90"
                             type="text" wire:model.debounce.500ms="settingValue" @click.away="$wire.checkValues()"
-                            placeholder="Enter Site Name">
+                            placeholder="eg. MrSmart Cleaning Services">
 
                         <span x-show="setting != 'name'" x-cloak
                             x-transition:enter="transition ease-out duration-400 delay-150"
@@ -65,7 +67,7 @@
                             x-transition:leave="transition ease-in duration-300"
                             x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90"
                             type="text" wire:model.debounce.500ms="settingValue" @click.away="$wire.checkValues()"
-                            placeholder="Enter Site Location">
+                            placeholder="eg. Mpeketoni, Lamu">
 
                         <span x-show="setting != 'location'" x-cloak
                             x-transition:enter="transition ease-out duration-400 delay-150"
@@ -89,14 +91,14 @@
                             x-transition:leave="transition ease-in duration-300"
                             x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90"
                             type="email" wire:model.debounce.500ms="settingValue" @click.away="$wire.checkValues()"
-                            placeholder="Enter Site Email">
+                            placeholder="eg. info@domain.com">
 
                         <span x-show="setting != 'email'" x-cloak
                             x-transition:enter="transition ease-out duration-400 delay-150"
                             x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100"
                             x-transition:leave="transition ease-in duration-100"
                             x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-0"
-                            data-field=" Edit Site Email" wire:click="setField('email')">{{ $siteInfo->email }}</span>
+                            data-field="Edit Site Email" wire:click="setField('email')">{{ $siteInfo->email }}</span>
 
                     </p>
                 </div>
@@ -112,14 +114,14 @@
                             x-transition:leave="transition ease-in duration-300"
                             x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90"
                             type="text" wire:model.debounce.500ms="settingValue" @click.away="$wire.checkValues()"
-                            placeholder="Enter Site Phone">
+                            placeholder="eg. +2547XXXXXXXX">
 
                         <span x-show="setting != 'phone'" x-cloak
                             x-transition:enter="transition ease-out duration-400 delay-150"
                             x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100"
                             x-transition:leave="transition ease-in duration-100"
                             x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-0"
-                            data-field=" Edit Site Phone" wire:click="setField('phone')">{{ $siteInfo->phone }}</span>
+                            data-field="Edit Site Phone" wire:click="setField('phone')">{{ $siteInfo->phone }}</span>
 
                     </p>
                 </div>
@@ -142,7 +144,7 @@
                                 x-transition:leave-start="opacity-100 scale-100"
                                 x-transition:leave-end="opacity-0 scale-90" type="text"
                                 wire:model.debounce.500ms="settingValue" @click.away="$wire.checkValues()"
-                                placeholder="Enter Operation Day">
+                                placeholder="eg. Mon,Tue Wed ...">
 
                             <span x-show="setting != 'operation_day_from'" x-cloak
                                 x-transition:enter="transition ease-out duration-400 delay-150"
@@ -150,7 +152,7 @@
                                 x-transition:enter-end="opacity-100 scale-100"
                                 x-transition:leave="transition ease-in duration-100"
                                 x-transition:leave-start="opacity-100 scale-100"
-                                x-transition:leave-end="opacity-0 scale-0" data-field=" Edit Operation Day"
+                                x-transition:leave-end="opacity-0 scale-0" data-field="Edit Operation Day"
                                 wire:click="setField('operation_day_from')">{{ $siteInfo->operation_day_from }}</span>
 
                         </p>
@@ -167,7 +169,7 @@
                                 x-transition:leave-start="opacity-100 scale-100"
                                 x-transition:leave-end="opacity-0 scale-90" type="text"
                                 wire:model.debounce.500ms="settingValue" @click.away="$wire.checkValues()"
-                                placeholder="Enter Operation Day">
+                                placeholder="eg. Fri,Sat,Sun ...">
 
                             <span x-show="setting != 'operation_day_to'" x-cloak
                                 x-transition:enter="transition ease-out duration-400 delay-150"
@@ -175,7 +177,7 @@
                                 x-transition:enter-end="opacity-100 scale-100"
                                 x-transition:leave="transition ease-in duration-100"
                                 x-transition:leave-start="opacity-100 scale-100"
-                                x-transition:leave-end="opacity-0 scale-0" data-field=" Edit Operation Day"
+                                x-transition:leave-end="opacity-0 scale-0" data-field="Edit Operation Day"
                                 wire:click="setField('operation_day_to')">{{ $siteInfo->operation_day_to }}</span>
 
                         </p>
@@ -199,7 +201,7 @@
                                 x-transition:leave-start="opacity-100 scale-100"
                                 x-transition:leave-end="opacity-0 scale-90" type="text"
                                 wire:model.debounce.500ms="settingValue" @click.away="$wire.checkValues()"
-                                placeholder="Enter Operation Time">
+                                placeholder="eg. 6am,7am,8am ...">
                             {{-- @else --}}
                             <span x-show="setting != 'operation_time_from'" x-cloak
                                 x-transition:enter="transition ease-out duration-400 delay-150"
@@ -207,7 +209,7 @@
                                 x-transition:enter-end="opacity-100 scale-100"
                                 x-transition:leave="transition ease-in duration-100"
                                 x-transition:leave-start="opacity-100 scale-100"
-                                x-transition:leave-end="opacity-0 scale-0" data-field=" Edit Operation Time"
+                                x-transition:leave-end="opacity-0 scale-0" data-field="Edit Operation Time"
                                 wire:click="setField('operation_time_from')">{{ $siteInfo->operation_time_from }}</span>
                         </p>
                     </div>
@@ -223,7 +225,7 @@
                                 x-transition:leave-start="opacity-100 scale-100"
                                 x-transition:leave-end="opacity-0 scale-90" type="text"
                                 wire:model.debounce.500ms="settingValue" @click.away="$wire.checkValues()"
-                                placeholder="Enter Operation Time">
+                                placeholder="eg. 3pm,4pm,5pm ...">
                             {{-- @else --}}
                             <span x-show="setting != 'operation_time_to'" x-cloak
                                 x-transition:enter="transition ease-out duration-400 delay-150"
@@ -231,7 +233,7 @@
                                 x-transition:enter-end="opacity-100 scale-100"
                                 x-transition:leave="transition ease-in duration-100"
                                 x-transition:leave-start="opacity-100 scale-100"
-                                x-transition:leave-end="opacity-0 scale-0" data-field=" Edit Operation Time"
+                                x-transition:leave-end="opacity-0 scale-0" data-field="Edit Operation Time"
                                 wire:click="setField('operation_time_to')">{{ $siteInfo->operation_time_to }}</span>
                             {{-- @endif --}}
                         </p>
