@@ -31,7 +31,37 @@ body {
     @apply fixed inset-0 overflow-y-auto flex  justify-center pt-32 bg-black/30 z-50;
 
     .modal {
-        @apply bg-white p-10 min-w-[30%] h-max rounded-lg;
+        @apply bg-white p-5 min-w-[30%] h-max rounded-lg shadow;
+        .settings-modal {
+            @apply flex items-center justify-between;
+
+            .modal-info {
+                @apply flex items-center justify-between;
+
+                svg {
+                    @apply h-6 fill-blue-500;
+                }
+
+                p {
+                    @apply ml-2;
+                }
+            }
+            .modal-action {
+                @apply w-2/5 flex items-center gap-3 justify-between;
+
+                button {
+                    @apply w-[45%] py-1 rounded transition-colors duration-200 hover:shadow-sm;
+
+                    &.save {
+                        @apply bg-green-500 text-white font-semibold  hover:bg-green-600;
+                    }
+
+                    &.discard {
+                        @apply bg-red-100 text-red-500 hover:bg-red-500 hover:text-white;
+                    }
+                }
+            }
+        }
     }
 }
 .input-group {
@@ -260,6 +290,22 @@ main.mrsmart-parent {
         @apply bg-primary w-full my-3 h-1;
     }
 
+    .setting p {
+        &.name {
+            @apply font-semibold;
+        }
+
+        &.value {
+            @apply text-ms-dark;
+
+            input {
+                @apply rounded w-full border-accent border;
+            }
+            span {
+                @apply relative cursor-pointer block   h-full w-full before:text-white before:py-1 before:px-2 before:shadow-sm before:translate-x-[-50%] before:hidden before:hover:block  before:left-[50%] before:absolute  before:hover:top-0 before:transition-all before:duration-200 before:bg-accent before:text-xs before:scale-0 before:hover:scale-100 before:content-[attr(data-field)];
+            }
+        }
+    }
     .settings {
         @apply flex flex-col gap-10;
 
@@ -271,17 +317,6 @@ main.mrsmart-parent {
 
                 p {
                     @apply shadow px-2 py-3;
-
-                    &.name {
-                        @apply font-semibold;
-                    }
-
-                    &.value {
-                        @apply text-gray-600;
-                        span {
-                            @apply relative cursor-pointer block  h-full w-full before:text-white before:py-1 before:px-2 before:shadow-sm before:translate-x-[-50%] before:hidden before:hover:block  before:left-[50%] before:absolute  before:hover:top-0 before:transition-all before:duration-200 before:bg-accent before:text-xs before:scale-0 before:hover:scale-100 before:content-[attr(data-field)];
-                        }
-                    }
                 }
             }
         }
@@ -300,18 +335,6 @@ main.mrsmart-parent {
 
                     p {
                         @apply w-1/2 shadow px-2 py-3;
-
-                        &.name {
-                            @apply font-semibold;
-                        }
-
-                        &.value {
-                            @apply text-ms-dark;
-
-                            span {
-                                @apply relative cursor-pointer block   h-full w-full before:text-white before:py-1 before:px-2 before:shadow-sm before:translate-x-[-50%] before:hidden before:hover:block  before:left-[50%] before:absolute  before:hover:top-0 before:transition-all before:duration-200 before:bg-accent before:text-xs before:scale-0 before:hover:scale-100 before:content-[attr(data-field)];
-                            }
-                        }
                     }
                 }
             }

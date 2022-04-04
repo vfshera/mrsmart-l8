@@ -51,6 +51,11 @@ class PagesController extends Controller
         return view('dashboard');
     }
 
+    public function settings()
+    {
+        return view('settings');
+    }
+
     public function notFound()
     {
         return view('notfound');
