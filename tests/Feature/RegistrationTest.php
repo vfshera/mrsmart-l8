@@ -9,6 +9,12 @@ class RegistrationTest extends TestCase
 {
     use RefreshDatabase;
 
+    /** @test **/
+    public function registration()
+    {
+        return $this->markTestSkipped('Registration support is not enabled.');
+    }
+
     // public function test_registration_screen_can_be_rendered()
     // {
     //     if (! Features::enabled(Features::registration())) {
