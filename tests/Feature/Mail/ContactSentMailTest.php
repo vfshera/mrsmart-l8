@@ -2,21 +2,26 @@
 
 namespace Tests\Feature\Mail;
 
+use App\Mail\ContactSentMail;
+use App\Models\ContactMessage;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class ContactSentMailTest extends TestCase
 {
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
-    public function test_example()
-    {
-        $response = $this->get('/');
+    use RefreshDatabase;
 
-        $response->assertStatus(200);
+    /** @test **/
+    public function contact_mail_content()
+    {
+        $contact = ContactMessage::factory()->create();
+
+        $this->assertDatabaseCount('contact_messages', 1);
+
+        $mailable = new ContactSentMail($contact->name);
+
+        $mailable->assertSeeInHtml($contact->name);
+        $mailable->assertSeeInHtml("Hello");
     }
+
 }
