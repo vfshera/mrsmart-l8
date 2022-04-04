@@ -17,7 +17,9 @@ class ContactMessageFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->name,
+            'email' => $this->faker->email,
+            'message' => $this->faker->realText(100),
         ];
     }
 }
