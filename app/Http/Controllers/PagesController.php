@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\SiteSettings;
-use Litespeed\LSCache\LSCache;
 
 class PagesController extends Controller
 {
@@ -46,7 +45,6 @@ class PagesController extends Controller
 
     public function dashboard()
     {
-        LSCache::purgeAll();
 
         return view('dashboard');
     }
