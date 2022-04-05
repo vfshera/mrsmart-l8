@@ -5,7 +5,6 @@ namespace App\Http\Livewire;
 use App\Models\SiteSettings;
 use Illuminate\Support\Facades\Validator;
 use Livewire\Component;
-use LSCache;
 
 class Settings extends Component
 {
@@ -85,7 +84,7 @@ class Settings extends Component
 
         $this->siteInfo->update($validData);
 
-        LSCache::purgeAll();
+        // LSCache::purgeAll();
 
         session()->flash('success', "Settings updated!");
 

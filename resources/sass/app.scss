@@ -463,7 +463,10 @@ main.mrsmart-parent {
         }
 
         .copyright {
-            @apply mt-2 text-sm text-white text-center sm:text-left;
+            @apply mt-2 text-sm text-white flex items-center text-center sm:text-left;
+            span {
+                @apply border-r border-white h-5 flex justify-center items-center pr-2 mr-2;
+            }
         }
     }
 

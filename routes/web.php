@@ -3,13 +3,17 @@
 use App\Http\Controllers\PagesController;
 use Illuminate\Support\Facades\Route;
 
-Route::middleware(['HtmlMinifier', 'lscache:max-age=604800;public'])->group(function () {
+Route::middleware(['HtmlMinifier'])->group(function () {
+
+    //'lscache:max-age=604800;public'
 
     Route::get('/', [PagesController::class, 'index'])->name('welcome');
 
 });
 
-Route::middleware(['auth:sanctum', 'verified', 'lscache:no-cache'])->prefix('dashboard')->group(function () {
+Route::middleware(['auth:sanctum', 'verified'])->prefix('dashboard')->group(function () {
+
+    //'lscache:no-cache'
 
     Route::get('/', [PagesController::class, 'dashboard'])->name('dashboard');
 

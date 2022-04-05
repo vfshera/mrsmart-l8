@@ -2672,6 +2672,8 @@ main.mrsmart-parent{
 }
 .footer .brand .copyright{
   margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
   text-align: center;
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -2682,6 +2684,17 @@ main.mrsmart-parent{
   .footer .brand .copyright{
     text-align: left;
   }
+}
+.footer .brand .copyright span{
+  margin-right: 0.5rem;
+  display: flex;
+  height: 1.25rem;
+  align-items: center;
+  justify-content: center;
+  border-right-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+  padding-right: 0.5rem;
 }
 .footer .quick-links, .footer .contact{
   display: flex;

@@ -13,7 +13,7 @@
             and working environment.
         </p>
 
-        <p class="copyright">&copy; MrSMart Cleaning Services {{ date('Y', time()) }}</p>
+        <p class="copyright"> <span>&copy; {{ date('Y', time()) }}</span> MrSmart Cleaning Services</p>
     </div>
 
     <div class="quick-links">
