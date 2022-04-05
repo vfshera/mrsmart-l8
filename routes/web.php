@@ -15,7 +15,6 @@ Route::middleware(['auth:sanctum', 'verified'])->prefix('dashboard')->group(func
 
     Route::get('site-settings', [PagesController::class, 'settings'])->name('site-settings');
     Route::get('messages', [PagesController::class, 'messages'])->name('messages');
-    // Route::get('messages', Messages::class)->name('messages');
 
 });
 

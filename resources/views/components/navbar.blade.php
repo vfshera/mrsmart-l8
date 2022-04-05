@@ -84,7 +84,8 @@
 
         <div class="call-number group">
             <img id="call-icon" src="storage/icons/phone.svg" alt="Call Us Icon">
-            <a id="call-us" class="group-hover:text-white" href="tel:+254113350588">Call Us {{ $siteInfo->phone }}</a>
+            <a id="call-us" class="group-hover:text-white" href="tel:{{ $siteInfo->phone }}">Call Us
+                {{ $siteInfo->phone }}</a>
         </div>
     @endguest
 

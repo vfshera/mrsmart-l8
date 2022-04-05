@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\SiteSettings;
+use SEO;
 
 class PagesController extends Controller
 {
@@ -40,27 +41,37 @@ class PagesController extends Controller
 
         $siteInfo = SiteSettings::first();
 
+        SEO::setTitle('Home');
+
         return view('welcome', compact('services', 'siteInfo'));
     }
 
     public function dashboard()
     {
 
+        SEO::setTitle('Dashboard');
+
         return view('dashboard');
     }
 
     public function settings()
     {
+        SEO::setTitle('Settings');
+
         return view('settings');
     }
 
     public function messages()
     {
+        SEO::setTitle('Messages');
+
         return view('messages');
     }
 
     public function notFound()
     {
+        SEO::setTitle('404');
+
         return view('notfound');
     }
 }

@@ -598,7 +598,7 @@ section.services {
                 p {
                     @apply text-ms-dark text-sm lg:text-base;
                 }
-                span {
+                a {
                     @apply hidden  text-accent sm:flex items-center gap-1 text-xs lg:text-base;
 
                     svg {
