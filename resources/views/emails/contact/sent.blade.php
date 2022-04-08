@@ -64,7 +64,7 @@
                                                             <td
                                                                 style="width: 60px;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
                                                                 <img alt="MrSmart Logo" height="auto"
-                                                                    src="https://mrsmart.sheraclassics.co.ke/storage/icons/logo.svg"
+                                                                    src="{{ config('app.url') }}/storage/icons/logo.svg"
                                                                     style="border: 0;display: block;outline: none;text-decoration: none;height: auto;width: 100%;font-size: 13px;line-height: 100%;-ms-interpolation-mode: bicubic;"
                                                                     width="60">
                                                             </td>
