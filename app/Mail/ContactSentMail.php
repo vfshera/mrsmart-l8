@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\Models\SiteSettings;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -12,10 +13,13 @@ class ContactSentMail extends Mailable implements ShouldQueue
     use Queueable, SerializesModels;
 
     public $name;
+    public $siteInfo;
 
     public function __construct($name)
     {
         $this->name = $name;
+
+        $this->siteInfo = SiteSettings::first();
     }
 
     /**

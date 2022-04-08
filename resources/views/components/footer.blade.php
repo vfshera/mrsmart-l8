@@ -13,7 +13,7 @@
             and working environment.
         </p>
 
-        <p class="copyright"> <span>&copy; {{ date('Y', time()) }}</span> MrSmart Cleaning Services</p>
+        <p class="copyright"> <span>&copy; {{ date('Y', time()) }}</span> {{ config('app.name') }}</p>
     </div>
 
     <div class="quick-links">
