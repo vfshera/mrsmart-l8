@@ -126,8 +126,9 @@
                                                 style="font-size: 0px;padding: 2px;word-break: break-word;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
                                                 <div
                                                     style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:17px;font-weight:400;line-height:1;text-align:center;color:#7a7a7a;">
-                                                    You have a new message from <strong
-                                                        style="color: #0f485b;">{{ $sender }}</strong>.</div>
+                                                    You have a new message from <strong style="color: #0f485b;">
+                                                        {{ $sender }}
+                                                    </strong>.</div>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -146,7 +147,7 @@
                 <tbody>
                     <tr>
                         <td
-                            style="direction: ltr;font-size: 0px;padding: 0;padding-bottom: 30px;padding-top: 30px;text-align: center;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
+                            style="direction: ltr;font-size: 0px;padding: 40px;padding-bottom: 30px;padding-top: 30px;text-align: center;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
                             <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" style="vertical-align:top;width:450px;" ><![endif]-->
                             <div class="mj-column-per-75 mj-outlook-group-fix"
                                 style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
@@ -165,7 +166,7 @@
                                                                 style="font-size: 0px;padding: 2px;word-break: break-word;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
                                                                 <div
                                                                     style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:14px;font-weight:400;line-height:1;text-align:center;color:#2ba79b;">
-                                                                    {{ $message }}</div>
+                                                                    {{ $msg }}</div>
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -201,8 +202,7 @@
                                                 style="font-size: 0px;padding: 5px;word-break: break-word;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
                                                 <div
                                                     style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:12px;font-weight:400;line-height:1;text-align:center;color:white;">
-                                                    <a
-                                                        href="tel:{{ $siteInfo->phone ?? '' }}">{{ $siteInfo->phone ?? '' }}</a>
+                                                    <a href="tel:{{ $siteInfo->phone }}">{{ $siteInfo->phone }}</a>
                                                 </div>
                                             </td>
                                         </tr>
@@ -212,7 +212,7 @@
                                                 <div
                                                     style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:12px;font-weight:400;line-height:1;text-align:center;color:white;">
                                                     <a
-                                                        href="mailto:{{ $siteInfo->email ?? '' }}">{{ $siteInfo->email ?? '' }}</a>
+                                                        href="mailto:{{ $siteInfo->email }}">{{ $siteInfo->email }}</a>
                                                 </div>
                                             </td>
                                         </tr>
