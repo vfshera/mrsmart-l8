@@ -14,7 +14,7 @@ return [
             'description' => 'We are a commercial and domestic cleaning services company based in Lamu Kenya offering  home, office, sofa and carpet cleaning.', // set false to total remove
             'separator' => ' - ',
             'keywords' => ["upholstery cleaning", "carpet cleaning", "dry cleaning", "car interior cleaning", "cleaning services", "cleaners", "cleaning"],
-            'canonical' => false, // Set to null or 'full' to use Url::full(), set to 'current' to use Url::current(), set false to total remove
+            'canonical' => null, // Set to null or 'full' to use Url::full(), set to 'current' to use Url::current(), set false to total remove
             'robots' => false, // Set to 'all', 'none' or any combination of index/noindex and follow/nofollow
         ],
         /*
@@ -41,7 +41,7 @@ return [
             'url' => null, // Set null for using Url::current(), set false to total remove
             'type' => 'website',
             'site_name' => "MrSmart Cleaning Services",
-            'images' => [],
+            'images' => [asset('storage/images/mrsmart-og.webp')],
         ],
     ],
     'twitter' => [
@@ -62,7 +62,7 @@ return [
             'description' => 'We are a commercial and domestic cleaning services company based in Lamu Kenya offering home, office, sofa and carpet cleaning.', // set false to total remove
             'url' => false, // Set to null or 'full' to use Url::full(), set to 'current' to use Url::current(), set false to total remove
             'type' => 'WebPage',
-            'images' => [],
+            'images' => [asset('storage/images/mrsmart-og.webp')],
         ],
     ],
 ];
